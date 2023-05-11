@@ -1,0 +1,14 @@
+<h1>Why did you mess up in the first place???</h1>
+
+<form action=" <%= sub_url(@sub) %>" method ="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="_method" value="PATCH">
+    <!-- <input type="hidden" name="sub[moderator_id]" value="<%= current_user.id %>"> -->
+    <label>Title:
+        <input name="sub[title]" value="<%= @sub.title %>">
+    </label>
+    <label>Description:
+        <input name="sub[description]" value="<%= @sub.description %>">
+    </label>
+    <button>don't do it again</button>
+</form>
