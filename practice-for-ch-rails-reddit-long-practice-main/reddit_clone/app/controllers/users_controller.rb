@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     end
 
     def create
+        # debugger
         @user = User.new(user_params)
         if @user.save
             login!(@user)
@@ -16,6 +17,10 @@ class UsersController < ApplicationController
         end
     end
 
+    def show 
+        @user = User.find_by(id:params[:id])
+        render :show
+    end 
 
 
     def user_params
